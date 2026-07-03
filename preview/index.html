@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vytrex Panel</title>
+<link rel="stylesheet" href="/static/styles.css">
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@master/qrcode.min.js" defer></script>
+</head>
+<body>
+
+<!-- ───────────── LOGIN ───────────── -->
+<div id="login" class="login-wrap">
+  <div class="login-card">
+    <div class="brand"><span class="mark">V</span><div><h1>Vytrex</h1><small>panel</small></div></div>
+    <p class="welcome" id="welcomeMsg" data-i18n="welcome">Welcome back 👋</p>
+    <div class="login-tools">
+      <select id="loginLangSel" class="chip"></select>
+      <button class="chip" id="loginTheme">◑</button>
+    </div>
+    <label data-i18n="username">Username</label>
+    <input id="lg_user" autocomplete="username" value="admin">
+    <label data-i18n="password">Password</label>
+    <input id="lg_pass" type="password" autocomplete="current-password">
+    <button class="btn block" id="lg_btn" data-i18n="signin">Sign in</button>
+    <p class="err" id="lg_err"></p>
+  </div>
+</div>
+
+<!-- ───────────── APP ───────────── -->
+<div id="app" class="app" hidden>
+  <header class="topbar">
+    <div class="brand"><span class="mark">V</span><div><h1>Vytrex</h1><small id="verlbl">panel</small></div></div>
+    <nav class="tabs" id="tabs"></nav>
+    <div class="tools">
+      <select id="langSel" class="chip"></select>
+      <button class="chip" id="themeBtn">◑</button>
+      <button class="chip" id="logoutBtn" data-i18n="logout">Logout</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="view" id="v-overview"></section>
+    <section class="view" id="v-inbounds" hidden></section>
+    <section class="view" id="v-outbounds" hidden></section>
+    <section class="view" id="v-clients" hidden></section>
+    <section class="view" id="v-nodes" hidden></section>
+    <section class="view" id="v-settings" hidden></section>
+    <section class="view" id="v-logs" hidden></section>
+  </main>
+</div>
+
+<div class="modal" id="modal" hidden><div class="modal-card" id="modalc"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

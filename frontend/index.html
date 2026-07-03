@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<title>Vytrex Panel</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/static/styles.css">
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@master/qrcode.min.js" defer></script>
+</head>
+<body>
+
+<!-- ───────────── LOGIN ───────────── -->
+<div id="login" class="login-wrap">
+  <div class="login-glow"></div>
+  <div class="login-card">
+    <div class="brand"><span class="mark">V</span><div><h1>Vytrex</h1><small>panel</small></div></div>
+    <p class="welcome" id="welcomeMsg" data-i18n="welcome">Welcome back 👋</p>
+    <div class="login-tools">
+      <select id="loginLangSel" class="chip"></select>
+      <button class="chip" id="loginTheme" title="theme">◑</button>
+    </div>
+    <label data-i18n="username">Username</label>
+    <input id="lg_user" autocomplete="username" placeholder="username">
+    <label data-i18n="password">Password</label>
+    <input id="lg_pass" type="password" autocomplete="current-password" placeholder="••••••••">
+    <button class="btn block" id="lg_btn" data-i18n="signin">Sign in</button>
+    <p class="err" id="lg_err"></p>
+  </div>
+</div>
+
+<!-- ───────────── APP ───────────── -->
+<div id="app" class="app" hidden>
+  <aside class="sidebar" id="sidebar">
+    <div class="side-brand"><span class="mark">V</span><div><h1>Vytrex</h1><small id="verlbl">panel</small></div>
+      <button class="chip side-close" id="sideClose" aria-label="close">✕</button></div>
+    <nav class="side-nav" id="tabs"></nav>
+    <div class="side-tools">
+      <select id="langSel" class="chip"></select>
+      <button class="chip" id="themeBtn" title="theme">◑</button>
+      <button class="chip" id="logoutBtn" data-i18n="logout">Logout</button>
+    </div>
+  </aside>
+  <div class="side-scrim" id="sideScrim"></div>
+
+  <div class="content">
+  <header class="topbar">
+    <button class="chip menu-toggle" id="menuToggle" aria-label="menu">☰</button>
+    <div class="brand"><span class="mark">V</span><div><h1>Vytrex</h1><small id="verlbl2">panel</small></div></div>
+    <div class="tools topbar-tools">
+      <select id="langSel2" class="chip"></select>
+      <button class="chip" id="themeBtn2" title="theme">◑</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="view" id="v-overview"></section>
+    <section class="view" id="v-inbounds" hidden></section>
+    <section class="view" id="v-outbounds" hidden></section>
+    <section class="view" id="v-routing" hidden></section>
+    <section class="view" id="v-clients" hidden></section>
+    <section class="view" id="v-nodes" hidden></section>
+    <section class="view" id="v-settings" hidden></section>
+    <section class="view" id="v-logs" hidden></section>
+  </main>
+  </div>
+</div>
+
+<div class="modal" id="modal" hidden><div class="modal-card" id="modalc"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

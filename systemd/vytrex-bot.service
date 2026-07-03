@@ -1,0 +1,13 @@
+[Unit]
+Description=Vytrex Panel — Telegram bot
+After=network.target vytrex-panel.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/vytrex-panel/backend
+ExecStart=/opt/vytrex-panel/venv/bin/python bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
